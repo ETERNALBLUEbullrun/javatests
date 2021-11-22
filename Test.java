@@ -133,6 +133,7 @@ public class Test {
 			testThread();
 //			testThreadPool();
 			TestCollection.main(args);
+			TestClass.main(args);
 		} catch (NoClassDefFoundError e) {
 			System.out.println("NoClassDefFoundError, check for NAME$*.class to link");
 			e.printStackTrace();
