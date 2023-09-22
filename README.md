@@ -1,2 +1,2 @@
-# javatest
-Exercise all Java features as succintly as can pass -Werror and remain readable 
+# javademo
+Demo Java's various functions and pass -Werror

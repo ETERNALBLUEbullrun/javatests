@@ -1,6 +1,6 @@
-class TestRunnable implements Runnable {
+class DemoRunnable implements Runnable {
 	private int index_;
-	TestRunnable(int index) {
+	DemoRunnable(int index) {
 		index_ = index;
 		System.out.println("E: this should not be printed");
 	}
@@ -9,7 +9,7 @@ class TestRunnable implements Runnable {
 		System.out.printf("Thread[%d].start=%d", java.lang.Thread.currentThread().getId(), index_);
 	}
 }
-public class Test {
+public class Demo {
 	static long x_;
 	public static void setX(int x) {
 		x_ = x;
@@ -25,7 +25,7 @@ public class Test {
 		ONE
 	}
 //	class InnerClass { };
-	public static void testPrintf() {
+	public static void demoPrintf() {
 		String differentAddress = "a";
 		if(differentAddress == differentAddress + "") {
 			System.out.println("E: + operator returned old address");
@@ -38,7 +38,7 @@ public class Test {
 //			String methodName = InnerClass.class.getEnclosingMethod().getName();
 //			String methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 //			String methodName = new Object() {}.getClass().getEnclosingMethod().getName();
-			String methodName = "testPrintf";
+			String methodName = "demoPrintf";
 			System.out.printf("%7.8s", methodName + " entered");
 			System.out.printf("%7d", (int)01234.5);
 			System.out.printf("%7.8f", (double)01234.5);
@@ -48,7 +48,7 @@ public class Test {
 //			e.printStackTrace();
 		}
 	}
-	public static void testArgs(String args[]) {
+	public static void demoArgs(String args[]) {
 		for(int i = 0; args.length > i; ++i) {
 			try {
 				//setX(Integer.parseInt(args[i]));
@@ -62,7 +62,7 @@ public class Test {
 			}
 		}
 	}
-	public static void testMath() {
+	public static void demoMath() {
 		int n = 3;
 		double[] constant = {
 			Math.PI,
@@ -91,13 +91,13 @@ public class Test {
 			case 1: System.out.println("case 1"); break;
 		}
 	}
-	public static void testThread() {//throws InterruptedException {
+	public static void demoThread() {//throws InterruptedException {
 		final int n = 8;
 		Thread threads[] = new Thread[n];
 		for(int i = 0; n > i; ++i) {
 			try {
 				final int threadIndex = i;
-				threads[i] = new Thread(new TestRunnable(i));
+				threads[i] = new Thread(new DemoRunnable(i));
 				/*threads[i] = new Thread(new Runnable() {
 					@Override
 					public void run() {
@@ -127,13 +127,13 @@ public class Test {
 	}
 	public static void main(String args[]) {
 		try {
-			testPrintf();
-			testArgs(args);
-			testMath();
-			testThread();
-//			testThreadPool();
-			TestCollection.main(args);
-			TestClass.main(args);
+			demoPrintf();
+			demoArgs(args);
+			demoMath();
+			demoThread();
+//			demoThreadPool();
+			DemoCollection.main(args);
+			DemoClass.main(args);
 		} catch (NoClassDefFoundError e) {
 			System.out.println("NoClassDefFoundError, check for NAME$*.class to link");
 			e.printStackTrace();

@@ -24,51 +24,51 @@ import java.util.TreeMap;	//O(log n)//NavigableMap<E>
 import java.util.AbstractMap;	//Map<E>
 import java.util.HashMap;	//O(1) if unique//O(N) if all in 1 bucket//AbstractMap<E>
 import java.util.EnumMap;	//O(1) if unique//O(N) if all in 1 bucket//AbstractMap<E>
-public class TestCollection {
+public class DemoCollection {
 	static enum Random {
 		ZERO,
 		ONE
 	}
-	public static <T extends Collection> void testCollection(T t) {
+	public static <T extends Collection> void demoCollection(T t) {
 		if(0 != t.size() || !t.isEmpty()) {System.out.println("E: new " + t.getClass() + " not empty");}
 		t.add(1);
 		if(1 != t.size() || !t.contains(1)) {System.out.println("E: " + t.getClass() + ".add fail");}
 		t.add(1);
 	}
-	public static <T extends Collection<?>> void testCollectionCleanup(T t) {
+	public static <T extends Collection<?>> void demoCollectionCleanup(T t) {
 		t.clear();
 		if(0 != t.size()) {System.out.println("E: " + t.getClass() + ".clear fail");}
 	}
-	public static <T extends List<?>> void testCollectionList(T t) {
-		testCollection(t);
+	public static <T extends List<?>> void demoCollectionList(T t) {
+		demoCollection(t);
 		if(2 != t.size()) {System.out.println("E: failed to add dup key in " + t.getClass());}
-		testCollectionCleanup(t);
+		demoCollectionCleanup(t);
 	}
-	public static <T extends Queue<?>> void testCollectionQueue(T t) {
-		testCollection(t);
+	public static <T extends Queue<?>> void demoCollectionQueue(T t) {
+		demoCollection(t);
 		if(2 != t.size()) {System.out.println("E: failed to add dup key in " + t.getClass());}
-		testCollectionCleanup(t);
+		demoCollectionCleanup(t);
 	}
-	public static <T extends Deque<?>> void testCollectionDeque(T t) {
-		testCollection(t);
+	public static <T extends Deque<?>> void demoCollectionDeque(T t) {
+		demoCollection(t);
 		if(2 != t.size()) {System.out.println("E: failed to add dup key in " + t.getClass());}
-		testCollectionCleanup(t);
+		demoCollectionCleanup(t);
 	}
-	public static <T extends Set<?>> void testCollectionSet(T t) {
-		testCollection(t);
+	public static <T extends Set<?>> void demoCollectionSet(T t) {
+		demoCollection(t);
 		if(1 != t.size()) {System.out.println("E: dup key in " + t.getClass());}
-		testCollectionCleanup(t);
+		demoCollectionCleanup(t);
 	}
-	public static void testCollectionEnumSet(EnumSet<Random> enums) {
-		testCollectionSet(enums);
+	public static void demoCollectionEnumSet(EnumSet<Random> enums) {
+		demoCollectionSet(enums);
 	}
-	public static <T extends SortedSet<?>> void testCollectionSortedSet(T t) {
-		testCollectionSet(t);
+	public static <T extends SortedSet<?>> void demoCollectionSortedSet(T t) {
+		demoCollectionSet(t);
 	}
-	public static <T extends NavigableSet<?>> void testCollectionNavigableSet(T t) {
-		testCollectionSet(t);
+	public static <T extends NavigableSet<?>> void demoCollectionNavigableSet(T t) {
+		demoCollectionSet(t);
 	}
-	public static <T extends Map> void testCollectionMap(T t) {
+	public static <T extends Map> void demoCollectionMap(T t) {
 		if(0 != t.size() || !t.isEmpty()) {System.out.println("E: new " + t.getClass() + " not empty");}
 		t.put(1, "one");
 		if(1 != t.size() || t.isEmpty()) {System.out.println("E: " + t.getClass() + ".add fail");}
@@ -87,47 +87,47 @@ public class TestCollection {
 		t.clear();
 		if(0 != t.size() || !t.isEmpty()) {System.out.println("E: " + t.getClass() + ".clear failed");}
 	}
-	public static <T extends AbstractMap<?, String>> void testCollectionAbstractMap(T t) {
-		testCollectionMap(t);
+	public static <T extends AbstractMap<?, String>> void demoCollectionAbstractMap(T t) {
+		demoCollectionMap(t);
 	}
-	public static <T extends SortedMap<?, String>> void testCollectionSortedMap(T t) {
-		testCollectionMap(t);
+	public static <T extends SortedMap<?, String>> void demoCollectionSortedMap(T t) {
+		demoCollectionMap(t);
 	}
-	public static <T extends NavigableMap<?, String>> void testCollectionNavigableMap(T t) {
-		testCollectionMap(t);
+	public static <T extends NavigableMap<?, String>> void demoCollectionNavigableMap(T t) {
+		demoCollectionMap(t);
 	}
-	public static void testCollectionEnumMap(EnumMap<Random, ?> enums) {
-		testCollectionMap(enums);
+	public static void demoCollectionEnumMap(EnumMap<Random, ?> enums) {
+		demoCollectionMap(enums);
 	}
-	public static <T> void testCollections_(Class<T> t) {
-		testCollectionList(new ArrayList<T>());
-		testCollectionList(new LinkedList<T>());
-		testCollectionDeque(new LinkedList<T>());
-		testCollectionList(new Vector<T>());
-		testCollectionList(new Stack<T>());
-		testCollectionQueue(new PriorityQueue<T>());
-		testCollectionQueue(new ArrayDeque<T>());
-//		testCollectionEnumSet(new <T>());
-		testCollectionSortedSet(new TreeSet<T>());
-		testCollectionNavigableSet(new TreeSet<T>());
-		testCollectionSet(new HashSet<T>());
-		testCollectionSet(new LinkedHashSet<T>());
-//		testCollectionSet(new ConcurrentSkipListSet<T>());
-		testCollectionSortedMap(new TreeMap<T, String>());
-		testCollectionNavigableMap(new TreeMap<T, String>());
-		testCollectionAbstractMap(new HashMap<T, String>());
-//		testCollectionMap(new ConcurrentSkipListMap<T, String>());
+	public static <T> void demoCollections_(Class<T> t) {
+		demoCollectionList(new ArrayList<T>());
+		demoCollectionList(new LinkedList<T>());
+		demoCollectionDeque(new LinkedList<T>());
+		demoCollectionList(new Vector<T>());
+		demoCollectionList(new Stack<T>());
+		demoCollectionQueue(new PriorityQueue<T>());
+		demoCollectionQueue(new ArrayDeque<T>());
+//		demoCollectionEnumSet(new <T>());
+		demoCollectionSortedSet(new TreeSet<T>());
+		demoCollectionNavigableSet(new TreeSet<T>());
+		demoCollectionSet(new HashSet<T>());
+		demoCollectionSet(new LinkedHashSet<T>());
+//		demoCollectionSet(new ConcurrentSkipListSet<T>());
+		demoCollectionSortedMap(new TreeMap<T, String>());
+		demoCollectionNavigableMap(new TreeMap<T, String>());
+		demoCollectionAbstractMap(new HashMap<T, String>());
+//		demoCollectionMap(new ConcurrentSkipListMap<T, String>());
 	}
-	public static void testCollections() {
-		testCollections_(Integer.class);
-		testCollections_(Long.class);
-		testCollections_(Float.class);
-		testCollections_(Double.class);
-//		testCollectionEnumMap(new EnumMap<Enum<T>, String>());
+	public static void demoCollections() {
+		demoCollections_(Integer.class);
+		demoCollections_(Long.class);
+		demoCollections_(Float.class);
+		demoCollections_(Double.class);
+//		demoCollectionEnumMap(new EnumMap<Enum<T>, String>());
 	}
 	public static void main(String args[]) {
 		try {
-			testCollections();
+			demoCollections();
 		} catch (NoClassDefFoundError e) {
 			System.out.println("NoClassDefFoundError, check for NAME$*.class to link");
 			e.printStackTrace();

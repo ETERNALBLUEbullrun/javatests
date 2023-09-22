@@ -1,4 +1,4 @@
-NAME="Test"
+NAME="Demo"
 ctags -R
 export JAVA_HOME=/data/data/com.termux/files/usr/opt/openjdk-17
 test -f "$NAME.dex" && rm "$NAME.dex"

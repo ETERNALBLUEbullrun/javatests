@@ -1,4 +1,4 @@
-public class TestClass {
+public class DemoClass {
 private String uuid = "983UH4K0VNMZ85";
 private static String uuidStat = "963YGRJHSHKHET";
 public static class NestedClass {
@@ -11,11 +11,11 @@ public class InnerClass {
 		System.out.println(uuid);
 	}
 }
-private static TestClass testClass = new TestClass();
+private static DemoClass demoClass = new DemoClass();
 public static void main(String args[]) {
-	System.out.println(TestClass.uuidStat);
-	InnerClass innerClass = testClass.new InnerClass();
-	TestClass.NestedClass.run();
+	System.out.println(DemoClass.uuidStat);
+	InnerClass innerClass = demoClass.new InnerClass();
+	DemoClass.NestedClass.run();
 }
 }
 
