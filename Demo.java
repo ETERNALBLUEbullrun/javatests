@@ -40,8 +40,8 @@ public class Demo {
 //			String methodName = new Object() {}.getClass().getEnclosingMethod().getName();
 			String methodName = "demoPrintf";
 			System.out.printf("%7.8s", methodName + " entered");
-			System.out.printf("%7d", (int)01234.5);
-			System.out.printf("%7.8f", (double)01234.5);
+			System.out.printf("%7d", (int)01210.1);
+			System.out.printf("%7.8f", (double)01210.1);
 			System.out.printf("%b\n", (boolean)true);
 		} catch(java.util.IllegalFormatPrecisionException e) {
 			System.out.println("IllegalFormatPrecisionException ");

@@ -16,7 +16,7 @@ else
 fi
 (
 eval $EXEC
-eval $EXEC 35.67
+eval $EXEC 12.21
 eval $EXEC --DEBUG
 eval $EXEC --DEBUG=2
 )

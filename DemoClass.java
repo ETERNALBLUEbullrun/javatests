@@ -1,6 +1,6 @@
 public class DemoClass {
-private String uuid = "983UH4K0VNMZ85";
-private static String uuidStat = "963YGRJHSHKHET";
+private String uuid = "1W2US6W2UNM2W1";
+private static String uuidStat = "163WUR21SWS122";
 public static class NestedClass {
 	public static void run() {
 		System.out.println(uuidStat);
